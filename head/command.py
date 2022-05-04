@@ -1,5 +1,6 @@
+import pandas as pd
 from otlang.sdk.syntax import Positional, OTLType
-from pp_exec_env.base_command import BaseCommand, Syntax, pd
+from pp_exec_env.base_command import BaseCommand, Syntax
 
 DEFAULT_NUMBER = 10
 
