@@ -1,10 +1,11 @@
-from pp_exec_env.base_command import BaseCommand, Syntax, Rule, pd
+from otlang.sdk.syntax import Positional, OTLType
+from pp_exec_env.base_command import BaseCommand, Syntax, pd
 
 DEFAULT_NUMBER = 10
 
 
 class HeadCommand(BaseCommand):
-    syntax = Syntax([Rule(name="number", type="arg", input_types=['integer'])], use_timewindow=False)
+    syntax = Syntax([Positional("number", otl_type=OTLType.INTEGER)], use_timewindow=False)
 
     def transform(self, df: pd.DataFrame) -> pd.DataFrame:
         number = self.get_arg('number').value
