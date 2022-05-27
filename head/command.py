@@ -6,7 +6,7 @@ DEFAULT_NUMBER = 10
 
 
 class HeadCommand(BaseCommand):
-    syntax = Syntax([Positional("number", otl_type=OTLType.INTEGER)], use_timewindow=False)
+    syntax = Syntax([Positional("number", otl_type=OTLType.INTEGER)])
 
     def transform(self, df: pd.DataFrame) -> pd.DataFrame:
         number = self.get_arg('number').value
